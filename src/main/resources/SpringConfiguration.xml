@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="user" class="ua.com.iam.entities.User">
+        <constructor-arg value="Nickolay" index="0"></constructor-arg>
+        <constructor-arg value="1" index="1"></constructor-arg>
+    </bean>
+
+    <bean id="topic" class="ua.com.iam.entities.Topic">
+        <property name="id">
+            <value>1</value>
+        </property>
+        <property name="name">
+            <value>Speech recognition</value>
+        </property>
+        <property name="enabled">
+            <value>true</value>
+        </property>
+        <property name="description">
+            <value>Dataset of voices</value>
+        </property>
+        <property name="owner">
+            <ref bean="user"></ref>
+        </property>
+    </bean>
+    <bean id="collection" class="ua.com.iam.entities.CollectionUsers">
+        <property name="docLists">
+            <list>
+                <value>Dataset 1</value>
+                <value>Dataset 2</value>
+                <value>Dataset 3</value>
+                <value>Dataset 4</value>
+            </list>
+        </property>
+    </bean>
+</beans>
