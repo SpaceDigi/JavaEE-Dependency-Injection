@@ -1,4 +1,4 @@
-package ua.com.iam.entities;
+package ua.com.iam;
 
 import java.util.List;
 import java.util.Set;

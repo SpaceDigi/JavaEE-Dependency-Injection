@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-
-
-    <bean id="user" class="ua.com.iam.entities.User">
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+    <context:component-scan base-package="ua.com.iam"/>
+    <bean id="userTopicService" class="ua.com.iam.UserTopicServiceImplementation" />
+    <bean id="user" class="ua.com.iam.User" >
         <constructor-arg value="Nickolay" index="0"></constructor-arg>
         <constructor-arg value="1" index="1"></constructor-arg>
     </bean>
 
-    <bean id="topic" class="ua.com.iam.entities.Topic">
+    <bean id="topic" class="ua.com.iam.Topic">
         <property name="id">
             <value>1</value>
         </property>
@@ -27,7 +29,7 @@
             <ref bean="user"></ref>
         </property>
     </bean>
-    <bean id="collection" class="ua.com.iam.entities.CollectionUsers">
+    <bean id="collection" class="ua.com.iam.CollectionUsers">
         <property name="docLists">
             <list>
                 <value>Dataset 1</value>
@@ -37,4 +39,5 @@
             </list>
         </property>
     </bean>
+
 </beans>

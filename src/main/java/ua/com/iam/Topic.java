@@ -1,4 +1,4 @@
-package ua.com.iam.entities;
+package ua.com.iam;
 
 public class Topic {
     private String name;
